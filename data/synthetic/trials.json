@@ -1,0 +1,334 @@
+[
+  {
+    "trial_id": "TRIAL-ONC-001",
+    "trial_name": "LUNG-ADVANCE: Phase III Trial in Metastatic Non-Small Cell Lung Cancer (NSCLC)",
+    "therapeutic_area": "Oncology",
+    "phase": "Phase III",
+    "target_population": "Adults with Stage IIIB/IV EGFR-mutated non-small cell lung cancer",
+    "target_enrollment": 120,
+    "enrollment_deadline": "2027-06-30",
+    "protocol_version": "v2.1",
+    "inclusion_criteria": [
+      {
+        "criterion_id": "INC-AGE-01",
+        "criterion_type": "INCLUSION",
+        "category": "AGE",
+        "field_name": "age",
+        "operator": "between",
+        "target_value": [
+          18,
+          80
+        ],
+        "description": "Age between 18 and 80 years at screening",
+        "is_mandatory": true,
+        "is_synthetic": true
+      },
+      {
+        "criterion_id": "INC-STAGE-01",
+        "criterion_type": "INCLUSION",
+        "category": "DISEASE_STAGE",
+        "field_name": "disease_stage",
+        "operator": "in",
+        "target_value": [
+          "Stage IIIB",
+          "Stage IV"
+        ],
+        "description": "Histologically confirmed Stage IIIB or Stage IV NSCLC",
+        "is_mandatory": true,
+        "is_synthetic": true
+      },
+      {
+        "criterion_id": "INC-BIO-01",
+        "criterion_type": "INCLUSION",
+        "category": "BIOMARKER",
+        "field_name": "EGFR_mutation",
+        "operator": "in",
+        "target_value": [
+          "Exon 19 del",
+          "L858R",
+          "Positive"
+        ],
+        "description": "Documented EGFR sensitizing mutation (Exon 19 del or L858R)",
+        "is_mandatory": true,
+        "is_synthetic": true
+      },
+      {
+        "criterion_id": "INC-LAB-EGFR",
+        "criterion_type": "INCLUSION",
+        "category": "LAB_VALUE",
+        "field_name": "eGFR",
+        "operator": ">=",
+        "target_value": 45.0,
+        "description": "Adequate renal function: estimated GFR >= 45 mL/min/1.73m2",
+        "is_mandatory": true,
+        "is_synthetic": true
+      },
+      {
+        "criterion_id": "INC-LAB-PLT",
+        "criterion_type": "INCLUSION",
+        "category": "LAB_VALUE",
+        "field_name": "platelets",
+        "operator": ">=",
+        "target_value": 100000.0,
+        "description": "Adequate bone marrow function: Platelets >= 100,000 /mcL",
+        "is_mandatory": true,
+        "is_synthetic": true
+      },
+      {
+        "criterion_id": "INC-LAB-ALT",
+        "criterion_type": "INCLUSION",
+        "category": "LAB_VALUE",
+        "field_name": "ALT",
+        "operator": "<=",
+        "target_value": 120.0,
+        "description": "Adequate hepatic function: ALT <= 120 U/L (<= 3x ULN)",
+        "is_mandatory": true,
+        "is_synthetic": true
+      },
+      {
+        "criterion_id": "INC-CONSENT-01",
+        "criterion_type": "INCLUSION",
+        "category": "CONSENT",
+        "field_name": "consent_status",
+        "operator": "is_true",
+        "target_value": true,
+        "description": "Signed written informed consent provided prior to study procedures",
+        "is_mandatory": true,
+        "is_synthetic": true
+      }
+    ],
+    "exclusion_criteria": [
+      {
+        "criterion_id": "EXC-COMORB-01",
+        "criterion_type": "EXCLUSION",
+        "category": "COMORBIDITY",
+        "field_name": "comorbidities",
+        "operator": "contains_any",
+        "target_value": [
+          "Untreated Brain Metastases",
+          "Interstitial Lung Disease",
+          "Active Severe Hepatitis"
+        ],
+        "description": "History of untreated brain metastases, interstitial lung disease, or active viral hepatitis",
+        "is_mandatory": true,
+        "is_synthetic": true
+      },
+      {
+        "criterion_id": "EXC-MED-01",
+        "criterion_type": "EXCLUSION",
+        "category": "MEDICATION",
+        "field_name": "medications",
+        "operator": "contains_any",
+        "target_value": [
+          "Strong CYP3A4 Inducers",
+          "Live Attenuated Vaccines"
+        ],
+        "description": "Concurrent therapy with potent CYP3A4 inducers or live vaccines",
+        "is_mandatory": true,
+        "is_synthetic": true
+      },
+      {
+        "criterion_id": "EXC-PRIOR-01",
+        "criterion_type": "EXCLUSION",
+        "category": "PRIOR_TREATMENT",
+        "field_name": "prior_treatment",
+        "operator": "contains_any",
+        "target_value": [
+          "Prior 3rd-Gen EGFR TKI",
+          "Investigational ADC within 28 days"
+        ],
+        "description": "Prior exposure to third-generation EGFR TKI or novel ADC within 28 days",
+        "is_mandatory": true,
+        "is_synthetic": true
+      }
+    ],
+    "is_synthetic": true,
+    "disclaimer": "Synthetic demonstration trial data \u2014 not a real clinical trial protocol."
+  },
+  {
+    "trial_id": "TRIAL-CARD-002",
+    "trial_name": "PRESERVE-HF: Phase III Trial in Heart Failure with Preserved Ejection Fraction",
+    "therapeutic_area": "Cardiology",
+    "phase": "Phase III",
+    "target_population": "Patients aged 45-85 with symptomatic HFpEF and elevated NT-proBNP",
+    "target_enrollment": 150,
+    "enrollment_deadline": "2027-09-30",
+    "protocol_version": "v1.4",
+    "inclusion_criteria": [
+      {
+        "criterion_id": "INC-CARD-AGE",
+        "criterion_type": "INCLUSION",
+        "category": "AGE",
+        "field_name": "age",
+        "operator": "between",
+        "target_value": [
+          45,
+          85
+        ],
+        "description": "Age between 45 and 85 years",
+        "is_mandatory": true,
+        "is_synthetic": true
+      },
+      {
+        "criterion_id": "INC-CARD-EF",
+        "criterion_type": "INCLUSION",
+        "category": "LAB_VALUE",
+        "field_name": "ejection_fraction",
+        "operator": ">=",
+        "target_value": 50.0,
+        "description": "Left ventricular ejection fraction (LVEF) >= 50%",
+        "is_mandatory": true,
+        "is_synthetic": true
+      },
+      {
+        "criterion_id": "INC-CARD-BNP",
+        "criterion_type": "INCLUSION",
+        "category": "LAB_VALUE",
+        "field_name": "NT_proBNP",
+        "operator": ">=",
+        "target_value": 300.0,
+        "description": "Elevated NT-proBNP >= 300 pg/mL (or >= 600 if atrial fibrillation)",
+        "is_mandatory": true,
+        "is_synthetic": true
+      },
+      {
+        "criterion_id": "INC-CARD-GFR",
+        "criterion_type": "INCLUSION",
+        "category": "LAB_VALUE",
+        "field_name": "eGFR",
+        "operator": ">=",
+        "target_value": 30.0,
+        "description": "Renal function: eGFR >= 30 mL/min/1.73m2",
+        "is_mandatory": true,
+        "is_synthetic": true
+      },
+      {
+        "criterion_id": "INC-CARD-CONSENT",
+        "criterion_type": "INCLUSION",
+        "category": "CONSENT",
+        "field_name": "consent_status",
+        "operator": "is_true",
+        "target_value": true,
+        "description": "Voluntary signed informed consent",
+        "is_mandatory": true,
+        "is_synthetic": true
+      }
+    ],
+    "exclusion_criteria": [
+      {
+        "criterion_id": "EXC-CARD-MI",
+        "criterion_type": "EXCLUSION",
+        "category": "COMORBIDITY",
+        "field_name": "comorbidities",
+        "operator": "contains_any",
+        "target_value": [
+          "Acute Myocardial Infarction within 90 days",
+          "Severe Aortic Stenosis",
+          "End-Stage Renal Disease on Dialysis"
+        ],
+        "description": "Recent acute MI within 90 days, hemodynamically significant valvular stenosis, or dialysis",
+        "is_mandatory": true,
+        "is_synthetic": true
+      },
+      {
+        "criterion_id": "EXC-CARD-MED",
+        "criterion_type": "EXCLUSION",
+        "category": "MEDICATION",
+        "field_name": "medications",
+        "operator": "contains_any",
+        "target_value": [
+          "Inotropic Agents",
+          "Investigational SGLT2 Inhibitor"
+        ],
+        "description": "Current IV inotropes or concurrent investigational cardioprotective therapies",
+        "is_mandatory": true,
+        "is_synthetic": true
+      }
+    ],
+    "is_synthetic": true,
+    "disclaimer": "Synthetic demonstration trial data \u2014 not a real clinical trial protocol."
+  },
+  {
+    "trial_id": "TRIAL-IMM-003",
+    "trial_name": "CROHN-TARGET: Phase IIb Trial in Moderate-to-Severe Active Crohn's Disease",
+    "therapeutic_area": "Immunology",
+    "phase": "Phase IIb",
+    "target_population": "Adults with moderate-to-severe Crohn's disease with inadequate response to biologics",
+    "target_enrollment": 90,
+    "enrollment_deadline": "2027-04-15",
+    "protocol_version": "v2.0",
+    "inclusion_criteria": [
+      {
+        "criterion_id": "INC-IMM-AGE",
+        "criterion_type": "INCLUSION",
+        "category": "AGE",
+        "field_name": "age",
+        "operator": "between",
+        "target_value": [
+          18,
+          75
+        ],
+        "description": "Age between 18 and 75 years",
+        "is_mandatory": true,
+        "is_synthetic": true
+      },
+      {
+        "criterion_id": "INC-IMM-CRP",
+        "criterion_type": "INCLUSION",
+        "category": "LAB_VALUE",
+        "field_name": "CRP",
+        "operator": ">=",
+        "target_value": 5.0,
+        "description": "C-reactive protein (CRP) >= 5.0 mg/L indicating active mucosal inflammation",
+        "is_mandatory": true,
+        "is_synthetic": true
+      },
+      {
+        "criterion_id": "INC-IMM-PRIOR",
+        "criterion_type": "INCLUSION",
+        "category": "PRIOR_TREATMENT",
+        "field_name": "prior_treatment",
+        "operator": "contains_any",
+        "target_value": [
+          "Anti-TNF Therapy",
+          "Corticosteroids",
+          "Immunomodulators"
+        ],
+        "description": "Documented history of inadequate response, loss of response, or intolerance to prior therapy",
+        "is_mandatory": true,
+        "is_synthetic": true
+      },
+      {
+        "criterion_id": "INC-IMM-CONSENT",
+        "criterion_type": "INCLUSION",
+        "category": "CONSENT",
+        "field_name": "consent_status",
+        "operator": "is_true",
+        "target_value": true,
+        "description": "Signed informed consent",
+        "is_mandatory": true,
+        "is_synthetic": true
+      }
+    ],
+    "exclusion_criteria": [
+      {
+        "criterion_id": "EXC-IMM-COMORB",
+        "criterion_type": "EXCLUSION",
+        "category": "COMORBIDITY",
+        "field_name": "comorbidities",
+        "operator": "contains_any",
+        "target_value": [
+          "Active Bowel Obstruction",
+          "Active Tuberculosis",
+          "Toxic Megacolon",
+          "Active Sepsis"
+        ],
+        "description": "Symptomatic stricture/obstruction, active tuberculosis, toxic megacolon, or untreated systemic infection",
+        "is_mandatory": true,
+        "is_synthetic": true
+      }
+    ],
+    "is_synthetic": true,
+    "disclaimer": "Synthetic demonstration trial data \u2014 not a real clinical trial protocol."
+  }
+]
