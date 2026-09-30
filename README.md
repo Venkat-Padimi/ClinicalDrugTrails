@@ -75,51 +75,51 @@ The platform decouples agentic workflow orchestration from deterministic mathema
 
 ```mermaid
 graph TD
-    subgraph Data Layer
-        A1[Trial Protocols]
-        A2[Synthetic Patient Populations]
-        A3[Historical Site Performance Data]
-        A4[Protocol Deviation Logs]
+    subgraph data_layer ["Data Layer"]
+        A1["Trial Protocols"]
+        A2["Synthetic Patient Populations"]
+        A3["Historical Site Performance Data"]
+        A4["Protocol Deviation Logs"]
     end
 
-    subgraph Deterministic Engines
-        E1[EligibilityCriteriaEngine]
-        E2[SiteIntelligenceEngine]
-        E3[RecruitmentForecastEngine]
-        E4[ProtocolDeviationEngine]
-        E5[SiteRiskEngine]
-        E6[SiteRankingEngine]
+    subgraph deterministic_engines ["Deterministic Engines"]
+        E1["EligibilityCriteriaEngine"]
+        E2["SiteIntelligenceEngine"]
+        E3["RecruitmentForecastEngine"]
+        E4["ProtocolDeviationEngine"]
+        E5["SiteRiskEngine"]
+        E6["SiteRankingEngine"]
     end
 
-    subgraph Agentic Orchestration Layer (LangGraph)
-        O1[Trial Intake Agent]
-        O2[Criteria Parsing Agent]
-        O3[Patient Screening Agent]
-        O4[Eligibility Evidence Agent]
-        O5[Site Intelligence Agent]
-        O6[Recruitment Forecast Agent]
-        O7[Protocol Deviation Agent]
-        O8[Site Risk Agent]
-        O9[Site Ranking Agent]
-        O10[Human Review Agent]
-        O11[Reporting Agent]
+    subgraph orchestration_layer ["Agentic Orchestration Layer (LangGraph)"]
+        O1["Trial Intake Agent"]
+        O2["Criteria Parsing Agent"]
+        O3["Patient Screening Agent"]
+        O4["Eligibility Evidence Agent"]
+        O5["Site Intelligence Agent"]
+        O6["Recruitment Forecast Agent"]
+        O7["Protocol Deviation Agent"]
+        O8["Site Risk Agent"]
+        O9["Site Ranking Agent"]
+        O10["Human Review Agent"]
+        O11["Reporting Agent"]
     end
 
-    subgraph Presentation & Governance
-        G1[Audit Trail System]
-        G2[Human Review Console]
-        G3[Streamlit Executive Dashboard]
-        G4[Export: Markdown / JSON / CSV]
+    subgraph presentation_governance ["Presentation & Governance"]
+        G1["Audit Trail System"]
+        G2["Human Review Console"]
+        G3["Streamlit Executive Dashboard"]
+        G4["Export: Markdown / JSON / CSV"]
     end
 
-    Data Layer --> Agentic Orchestration Layer
-    Agentic Orchestration Layer --> Deterministic Engines
-    Deterministic Engines --> Agentic Orchestration Layer
-    Agentic Orchestration Layer --> G1
-    Agentic Orchestration Layer --> G2
-    G2 --> Agentic Orchestration Layer
-    Agentic Orchestration Layer --> G3
-    Agentic Orchestration Layer --> G4
+    data_layer --> orchestration_layer
+    orchestration_layer --> deterministic_engines
+    deterministic_engines --> orchestration_layer
+    orchestration_layer --> G1
+    orchestration_layer --> G2
+    G2 --> orchestration_layer
+    orchestration_layer --> G3
+    orchestration_layer --> G4
 ```
 
 ---
@@ -143,14 +143,14 @@ sequenceDiagram
     TI->>CP: Structured Protocol Definition
     CP->>PS: Parsed Machine-Readable Rules
     PS->>EE: Patient Cohort Evaluation
-    EE->>SI: Validated Evidence & Missing Data Flags
+    EE->>SI: Validated Evidence and Missing Data Flags
     SI->>RF: Site Performance Metrics
-    RF->>PD: Recruitment Horizon & Feasibility
-    PD->>RA: Deviation History & GCP Compliance
+    RF->>PD: Recruitment Horizon and Feasibility
+    PD->>RA: Deviation History and GCP Compliance
     RA->>SR: Multi-Dimensional Site Risks
     SR-->>HR: Conditional Route (if Uncertain or High Risk)
     HR->>RP: Human Approved / Overridden Decisions
-    SR-->>RP: Direct Route (if Clean & Low Risk)
+    SR-->>RP: Direct Route (if Clean and Low Risk)
     RP->>RP: Final TrialAnalysisResult Dossier
 ```
 

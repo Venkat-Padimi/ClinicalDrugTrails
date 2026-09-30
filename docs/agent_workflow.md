@@ -21,14 +21,14 @@ sequenceDiagram
     TI->>CP: Structured Protocol Definition
     CP->>PS: Parsed Inclusion/Exclusion Rules
     PS->>EE: Patient Cohort Evaluation
-    EE->>SI: Validated Evidence & Missing Data Flags
+    EE->>SI: Validated Evidence and Missing Data Flags
     SI->>RF: Site Performance Metrics
-    RF->>PD: Recruitment Horizon & Feasibility
-    PD->>RA: Deviation History & GCP Compliance
+    RF->>PD: Recruitment Horizon and Feasibility
+    PD->>RA: Deviation History and GCP Compliance
     RA->>SR: Multi-Dimensional Site Risks
     SR-->>HR: Conditional Route (if Uncertain or High Risk)
     HR->>RP: Human Approved / Overridden Decisions
-    SR-->>RP: Direct Route (if Clean & Low Risk)
+    SR-->>RP: Direct Route (if Clean and Low Risk)
     RP->>RP: Final TrialAnalysisResult Dossier
 ```
 

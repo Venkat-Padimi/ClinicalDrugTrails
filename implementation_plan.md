@@ -13,34 +13,34 @@ The **Clinical Trial Site Selection & Recruitment Agent** is an enterprise-grade
 
 ```mermaid
 flowchart TD
-    A[Trial Protocol Definition] --> B[Criteria Parsing Agent]
-    C[Synthetic Patient Population] --> D[Patient Screening Agent]
+    A["Trial Protocol Definition"] --> B["Criteria Parsing Agent"]
+    C["Synthetic Patient Population"] --> D["Patient Screening Agent"]
     B --> D
-    D --> E[Eligibility Evidence Agent]
-    E -->|Deterministic Check| F{Ambiguity / Low Conf?}
-    F -->|Yes| G[Human Review Console]
-    F -->|No| H[Eligible Patient Pool]
+    D --> E["Eligibility Evidence Agent"]
+    E -->|Deterministic Check| F{"Ambiguity or Low Confidence?"}
+    F -->|Yes| G["Human Review Console"]
+    F -->|No| H["Eligible Patient Pool"]
 
-    I[Historical Site Database] --> J[Site Intelligence Agent]
-    K[Protocol Deviation Log] --> L[Protocol Deviation Agent]
+    I["Historical Site Database"] --> J["Site Intelligence Agent"]
+    K["Protocol Deviation Log"] --> L["Protocol Deviation Agent"]
     
-    H --> M[Recruitment Forecast Agent]
+    H --> M["Recruitment Forecast Agent"]
     J --> M
     
-    L --> N[Site Risk Assessment Agent]
+    L --> N["Site Risk Assessment Agent"]
     J --> N
     M --> N
     
-    N --> O[Site Prioritization / Ranking Agent]
-    O --> P{High Risk Flag?}
+    N --> O["Site Prioritization and Ranking Agent"]
+    O --> P{"High Risk Flag?"}
     P -->|Yes| G
-    P -->|No| Q[Multi-Agent LangGraph Orchestrator]
+    P -->|No| Q["Multi-Agent LangGraph Orchestrator"]
     G --> Q
     
-    Q --> R[Audit & Provenance Trace]
-    Q --> S[Executive Reporting Agent]
-    S --> T[Streamlit Executive Dashboard]
-    S --> U[Export JSON / CSV / Markdown]
+    Q --> R["Audit and Provenance Trace"]
+    Q --> S["Executive Reporting Agent"]
+    S --> T["Streamlit Executive Dashboard"]
+    S --> U["Export JSON / CSV / Markdown"]
 ```
 
 ---

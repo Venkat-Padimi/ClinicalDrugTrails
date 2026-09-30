@@ -26,51 +26,51 @@ The **Clinical Trial Site Selection & Recruitment Agent** is architected as an e
 
 ```mermaid
 graph TD
-    subgraph Data Layer
-        A1[Trial Protocols]
-        A2[Synthetic Patient Populations]
-        A3[Historical Site Performance Data]
-        A4[Protocol Deviation Logs]
+    subgraph data_layer ["Data Layer"]
+        A1["Trial Protocols"]
+        A2["Synthetic Patient Populations"]
+        A3["Historical Site Performance Data"]
+        A4["Protocol Deviation Logs"]
     end
 
-    subgraph Deterministic Engines
-        E1[EligibilityCriteriaEngine]
-        E2[SiteIntelligenceEngine]
-        E3[RecruitmentForecastEngine]
-        E4[ProtocolDeviationEngine]
-        E5[SiteRiskEngine]
-        E6[SiteRankingEngine]
+    subgraph deterministic_engines ["Deterministic Engines"]
+        E1["EligibilityCriteriaEngine"]
+        E2["SiteIntelligenceEngine"]
+        E3["RecruitmentForecastEngine"]
+        E4["ProtocolDeviationEngine"]
+        E5["SiteRiskEngine"]
+        E6["SiteRankingEngine"]
     end
 
-    subgraph Agentic Orchestration Layer
-        O1[Trial Intake Agent]
-        O2[Criteria Parsing Agent]
-        O3[Patient Screening Agent]
-        O4[Eligibility Evidence Agent]
-        O5[Site Intelligence Agent]
-        O6[Recruitment Forecast Agent]
-        O7[Protocol Deviation Agent]
-        O8[Site Risk Agent]
-        O9[Site Ranking Agent]
-        O10[Human Review Agent]
-        O11[Reporting Agent]
+    subgraph orchestration_layer ["Agentic Orchestration Layer (LangGraph)"]
+        O1["Trial Intake Agent"]
+        O2["Criteria Parsing Agent"]
+        O3["Patient Screening Agent"]
+        O4["Eligibility Evidence Agent"]
+        O5["Site Intelligence Agent"]
+        O6["Recruitment Forecast Agent"]
+        O7["Protocol Deviation Agent"]
+        O8["Site Risk Agent"]
+        O9["Site Ranking Agent"]
+        O10["Human Review Agent"]
+        O11["Reporting Agent"]
     end
 
-    subgraph Governance & Output
-        G1[Audit Trail System]
-        G2[Human Review Console]
-        G3[Executive Streamlit Dashboard]
-        G4[Markdown, JSON & CSV Export]
+    subgraph governance_output ["Governance & Output"]
+        G1["Audit Trail System"]
+        G2["Human Review Console"]
+        G3["Executive Streamlit Dashboard"]
+        G4["Markdown, JSON & CSV Export"]
     end
 
-    Data Layer --> Agentic Orchestration Layer
-    Agentic Orchestration Layer --> Deterministic Engines
-    Deterministic Engines --> Agentic Orchestration Layer
-    Agentic Orchestration Layer --> G1
-    Agentic Orchestration Layer --> G2
-    G2 --> Agentic Orchestration Layer
-    Agentic Orchestration Layer --> G3
-    Agentic Orchestration Layer --> G4
+    data_layer --> orchestration_layer
+    orchestration_layer --> deterministic_engines
+    deterministic_engines --> orchestration_layer
+    orchestration_layer --> G1
+    orchestration_layer --> G2
+    G2 --> orchestration_layer
+    orchestration_layer --> G3
+    orchestration_layer --> G4
 ```
 
 ---
